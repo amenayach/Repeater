@@ -32,7 +32,7 @@ namespace Repeator
                     var s = tbText.Text;
                     var result = string.Empty;
 
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < (int)numCount.Value; i++)
                     {
                         result += s.Replace("$i", i.ToString())
                                        .Replace("$b", (i % 2).ToString())
