@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbText = new System.Windows.Forms.RichTextBox();
             this.btnRepeat = new System.Windows.Forms.Button();
             this.lblCount = new System.Windows.Forms.Label();
             this.numCount = new System.Windows.Forms.NumericUpDown();
             this.btnInitialText = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +68,7 @@
             this.btnRepeat.Size = new System.Drawing.Size(111, 37);
             this.btnRepeat.TabIndex = 1;
             this.btnRepeat.Text = "&Repeat It!";
+            this.toolTip1.SetToolTip(this.btnRepeat, "F5");
             this.btnRepeat.UseVisualStyleBackColor = true;
             this.btnRepeat.Click += new System.EventHandler(this.btnRepeat_Click);
             // 
@@ -112,6 +115,7 @@
             this.btnInitialText.Size = new System.Drawing.Size(111, 37);
             this.btnInitialText.TabIndex = 4;
             this.btnInitialText.Text = "&Initial Text";
+            this.toolTip1.SetToolTip(this.btnInitialText, "Ctrl+Z");
             this.btnInitialText.UseVisualStyleBackColor = true;
             this.btnInitialText.Click += new System.EventHandler(this.btnInitialText_Click);
             // 
@@ -145,6 +149,7 @@
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.NumericUpDown numCount;
         private System.Windows.Forms.Button btnInitialText;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

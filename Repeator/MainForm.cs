@@ -67,6 +67,10 @@ namespace Repeator
             {
                 tbText.Text = _undoList.Pop();
             }
+            else if (e.KeyCode == Keys.F5)
+            {
+                btnRepeat.PerformClick();
+            }
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
