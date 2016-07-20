@@ -13,7 +13,8 @@ namespace Repeator
     public partial class MainForm : Form
     {
 
-        Stack<string> undoList = new Stack<string>();
+        private bool _stopWatch = false;
+        private readonly Stack<string> _undoList = new Stack<string>();
 
         public MainForm()
         {
@@ -27,7 +28,7 @@ namespace Repeator
                 if (!string.IsNullOrEmpty(tbText.Text))
                 {
 
-                    undoList.Push(tbText.Text);
+                    _undoList.Push(tbText.Text);
 
                     var s = tbText.Text;
                     var result = string.Empty;
@@ -40,7 +41,9 @@ namespace Repeator
                                        .Replace("\\n", Environment.NewLine);
                     }
 
+                    _stopWatch = true;
                     tbText.Text = result;
+                    _stopWatch = false;
 
                 }
             }
@@ -52,14 +55,17 @@ namespace Repeator
 
         private void tbText_TextChanged(object sender, EventArgs e)
         {
-            undoList.Push(tbText.Text);
+            if (!_stopWatch)
+            {
+                _undoList.Push(tbText.Text);
+            }
         }
 
         private void tbText_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Z && (e.Control))
+            if (e.KeyCode == Keys.Z && (e.Control) && _undoList.Count > 0)
             {
-                tbText.Text = undoList.Pop();
+                tbText.Text = _undoList.Pop();
             }
         }
 
@@ -68,6 +74,18 @@ namespace Repeator
             if (e.Alt && e.KeyCode == Keys.C)
             {
                 numCount.Focus();
+            }
+        }
+
+        private void btnInitialText_Click(object sender, EventArgs e)
+        {
+            if (_undoList.Count > 0)
+            {
+
+                _stopWatch = true;
+                tbText.Text = _undoList.Pop();
+                _stopWatch = false;
+
             }
         }
     }
