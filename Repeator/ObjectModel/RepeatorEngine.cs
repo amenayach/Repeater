@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace Repeator.ObjectModel
 {
@@ -48,8 +49,41 @@ namespace Repeator.ObjectModel
             {
                 result = RepeatByCount(count, template);
             }
+            else if (JsonManager.IsArray(dataSource))
+            {
+
+                var jarray = JArray.Parse(dataSource);
+
+                result = RepeatByJArray(jarray, template);
+
+            }
 
             return result;
+        }
+
+        private string RepeatByJArray(JArray jarray, string template)
+        {
+
+            if (jarray == null || string.IsNullOrWhiteSpace(template))
+            {
+                return string.Empty;
+            }
+
+            var result = new StringBuilder();
+
+            for (int i = 0; i < jarray.Count; i++)
+            {
+                result.Append(template
+                    .Replace("$item", jarray[i].ToString())
+                    .Replace("$i", i.ToString())
+                    .Replace("$b", (i % 2).ToString())
+                    .Replace("\\r\\n", Environment.NewLine)
+                    .Replace("\\n", Environment.NewLine)
+                  );
+            }
+
+            return result.ToString();
+
         }
 
         private string RepeatByCount(int count, string template)
@@ -58,14 +92,18 @@ namespace Repeator.ObjectModel
             if (count <= 0 || string.IsNullOrWhiteSpace(template))
             {
                 return string.Empty;
-
             }
 
             var result = new StringBuilder();
 
             for (int i = 0; i < count; i++)
             {
-                result.Append(template.Replace("$i", i.ToString().Replace("$b", (i % 2).ToString())));
+                result.Append(template
+                    .Replace("$i", i.ToString())
+                    .Replace("$b", (i % 2).ToString())
+                    .Replace("\\r\\n", Environment.NewLine)
+                    .Replace("\\n", Environment.NewLine)
+                  );
             }
 
             return result.ToString();
