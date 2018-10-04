@@ -71,6 +71,10 @@ namespace Repeator
             {
                 btnRepeat.PerformClick();
             }
+            else if (e.KeyCode == Keys.F6)
+            {
+                btnRepeatOver.PerformClick();
+            }
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -90,6 +94,44 @@ namespace Repeator
                 tbText.Text = _undoList.Pop();
                 _stopWatch = false;
 
+            }
+        }
+
+        private void btnRepeatOver_Click(object sender, EventArgs e)
+        {
+            var splitted = TextTemplateDialog.Prompt()?.ToList();
+
+            if (splitted?.Any() ?? false)
+            {
+                try
+                {
+                    if (!string.IsNullOrEmpty(tbText.Text))
+                    {
+
+                        _undoList.Push(tbText.Text);
+
+                        var s = tbText.Text;
+                        var result = string.Empty;
+
+                        for (int i = 0; i < splitted.Count(); i++)
+                        {
+                            result += s.Replace("$t", splitted[i])
+                                        .Replace("$i", i.ToString())
+                                        .Replace("$b", (i % 2).ToString())
+                                        .Replace("\\r\\n", Environment.NewLine)
+                                        .Replace("\\n", Environment.NewLine);
+                        }
+
+                        _stopWatch = true;
+                        tbText.Text = result;
+                        _stopWatch = false;
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
