@@ -57,7 +57,7 @@ namespace Repeator
 
         private void tbCommaSeperatedList_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyCode == Keys.Enter)
             {
                 btnOk_Click(btnOk, null);
             }

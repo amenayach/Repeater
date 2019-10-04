@@ -36,7 +36,7 @@
             this.btnInitialText = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnRepeatOver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnDefaultTemplate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             this.btnRepeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRepeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRepeat.ForeColor = System.Drawing.Color.White;
-            this.btnRepeat.Location = new System.Drawing.Point(483, 402);
+            this.btnRepeat.Location = new System.Drawing.Point(511, 402);
             this.btnRepeat.Name = "btnRepeat";
             this.btnRepeat.Size = new System.Drawing.Size(111, 37);
             this.btnRepeat.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.lblCount.AutoSize = true;
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(224, 409);
+            this.lblCount.Location = new System.Drawing.Point(252, 409);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(134, 22);
             this.lblCount.TabIndex = 2;
@@ -91,7 +91,7 @@
             // 
             this.numCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.numCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.numCount.Location = new System.Drawing.Point(357, 407);
+            this.numCount.Location = new System.Drawing.Point(385, 407);
             this.numCount.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -100,6 +100,7 @@
             this.numCount.Name = "numCount";
             this.numCount.Size = new System.Drawing.Size(120, 27);
             this.numCount.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.numCount, "F4");
             this.numCount.Value = new decimal(new int[] {
             10,
             0,
@@ -117,7 +118,7 @@
             this.btnInitialText.Name = "btnInitialText";
             this.btnInitialText.Size = new System.Drawing.Size(111, 37);
             this.btnInitialText.TabIndex = 4;
-            this.btnInitialText.Text = "&Initial Text";
+            this.btnInitialText.Text = "&Initial text";
             this.toolTip1.SetToolTip(this.btnInitialText, "Ctrl+Z");
             this.btnInitialText.UseVisualStyleBackColor = true;
             this.btnInitialText.Click += new System.EventHandler(this.btnInitialText_Click);
@@ -138,17 +139,21 @@
             this.btnRepeatOver.UseVisualStyleBackColor = true;
             this.btnRepeatOver.Click += new System.EventHandler(this.btnRepeatOver_Click);
             // 
-            // label1
+            // btnDefaultTemplate
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(596, 410);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 22);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Or";
+            this.btnDefaultTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDefaultTemplate.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDefaultTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDefaultTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDefaultTemplate.ForeColor = System.Drawing.Color.White;
+            this.btnDefaultTemplate.Location = new System.Drawing.Point(12, 402);
+            this.btnDefaultTemplate.Name = "btnDefaultTemplate";
+            this.btnDefaultTemplate.Size = new System.Drawing.Size(111, 37);
+            this.btnDefaultTemplate.TabIndex = 7;
+            this.btnDefaultTemplate.Text = "&Defaut text";
+            this.toolTip1.SetToolTip(this.btnDefaultTemplate, "Ctrl+Z");
+            this.btnDefaultTemplate.UseVisualStyleBackColor = true;
+            this.btnDefaultTemplate.Click += new System.EventHandler(this.btnDefaultTemplate_Click);
             // 
             // MainForm
             // 
@@ -156,9 +161,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(912, 451);
+            this.Controls.Add(this.btnDefaultTemplate);
             this.Controls.Add(this.btnRepeatOver);
             this.Controls.Add(this.btnRepeat);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInitialText);
             this.Controls.Add(this.numCount);
             this.Controls.Add(this.lblCount);
@@ -184,7 +189,7 @@
         private System.Windows.Forms.Button btnInitialText;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnRepeatOver;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDefaultTemplate;
     }
 }
 

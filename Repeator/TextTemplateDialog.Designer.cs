@@ -44,12 +44,12 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(742, 60);
+            this.btnCancel.Location = new System.Drawing.Point(642, 346);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(111, 37);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Ca&ncel";
-            this.toolTip1.SetToolTip(this.btnCancel, "Ctrl+Z");
+            this.toolTip1.SetToolTip(this.btnCancel, "Escape");
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -60,12 +60,12 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(623, 60);
+            this.btnOk.Location = new System.Drawing.Point(523, 346);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(111, 37);
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "&Ok";
-            this.toolTip1.SetToolTip(this.btnOk, "F5");
+            this.toolTip1.SetToolTip(this.btnOk, "Ctrl+Enter");
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
@@ -82,19 +82,24 @@
             // 
             // tbCommaSeperatedList
             // 
+            this.tbCommaSeperatedList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCommaSeperatedList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.tbCommaSeperatedList.Location = new System.Drawing.Point(201, 19);
+            this.tbCommaSeperatedList.Location = new System.Drawing.Point(16, 47);
+            this.tbCommaSeperatedList.Multiline = true;
             this.tbCommaSeperatedList.Name = "tbCommaSeperatedList";
-            this.tbCommaSeperatedList.Size = new System.Drawing.Size(653, 27);
+            this.tbCommaSeperatedList.Size = new System.Drawing.Size(737, 293);
             this.tbCommaSeperatedList.TabIndex = 0;
             this.tbCommaSeperatedList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommaSeperatedList_KeyDown);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(12, 68);
+            this.label1.Location = new System.Drawing.Point(12, 354);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(479, 22);
             this.label1.TabIndex = 13;
@@ -105,13 +110,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(865, 111);
+            this.ClientSize = new System.Drawing.Size(765, 397);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbCommaSeperatedList);
             this.Controls.Add(this.lblCommaSeperatedList);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = global::Repeator.Properties.Resources.Iconsmind_Outline_Code_Window;
             this.KeyPreview = true;
             this.Name = "TextTemplateDialog";

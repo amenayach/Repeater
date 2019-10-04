@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Repeator
@@ -66,6 +61,10 @@ namespace Repeator
             if (e.KeyCode == Keys.Z && (e.Control) && _undoList.Count > 0)
             {
                 tbText.Text = _undoList.Pop();
+            }
+            else if (e.KeyCode == Keys.F4)
+            {
+                numCount.Focus();
             }
             else if (e.KeyCode == Keys.F5)
             {
@@ -133,6 +132,16 @@ namespace Repeator
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void btnDefaultTemplate_Click(object sender, EventArgs e)
+        {
+            tbText.Text = $@"{{
+    ""id"": $i,
+    ""name"": ""Someone$i"",
+    ""good"": $b,
+    ""date"": new Date($i, 1, 1)
+}},\r\n";
         }
     }
 }
