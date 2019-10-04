@@ -31,9 +31,10 @@ namespace Repeator
                     for (int i = 0; i < (int)numCount.Value; i++)
                     {
                         result += s.Replace("$i", i.ToString())
-                                       .Replace("$b", (i % 2).ToString())
-                                       .Replace("\\r\\n", Environment.NewLine)
-                                       .Replace("\\n", Environment.NewLine);
+                                    .Replace("$bool", (i % 2 == 0).ToString().ToLower())
+                                    .Replace("$b", (i % 2).ToString())
+                                    .Replace("\\r\\n", Environment.NewLine)
+                                    .Replace("\\n", Environment.NewLine);
                     }
 
                     _stopWatch = true;
@@ -116,6 +117,7 @@ namespace Repeator
                         {
                             result += s.Replace("$t", splitted[i])
                                         .Replace("$i", i.ToString())
+                                        .Replace("$bool", (i % 2 == 0).ToString().ToLower())
                                         .Replace("$b", (i % 2).ToString())
                                         .Replace("\\r\\n", Environment.NewLine)
                                         .Replace("\\n", Environment.NewLine);
@@ -139,7 +141,8 @@ namespace Repeator
             tbText.Text = $@"{{
     ""id"": $i,
     ""name"": ""Someone$i"",
-    ""good"": $b,
+    ""enabled"": $bool,
+    ""bit"": $b,
     ""date"": new Date($i, 1, 1)
 }},\r\n";
         }
