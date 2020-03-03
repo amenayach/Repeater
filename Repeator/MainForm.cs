@@ -145,7 +145,7 @@ namespace Repeator
     ""name"": ""Someone$i"",
     ""enabled"": $bool,
     ""bit"": $b,
-    ""guid"": $b,
+    ""guid"": ""$g"",
     ""date"": new Date($i, 1, 1)
 }},\r\n";
         }

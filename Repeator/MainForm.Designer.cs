@@ -54,8 +54,8 @@
             this.tbText.Name = "tbText";
             this.tbText.Size = new System.Drawing.Size(912, 384);
             this.tbText.TabIndex = 0;
-            this.tbText.Text = "{\n\t\"id\": $i,\n\t\"name\": \"Someone$i\",\n\t\"enabled\": $bool,\n\t\"bit\": $b,\n\t\"date\": new Da" +
-    "te($i, 1, 1)\n},\\r\\n";
+            this.tbText.Text = "{\n\t\"id\": $i,\n\t\"name\": \"Someone$i\",\n\t\"enabled\": $bool,\n\t\"bit\": $b,\n\t\"guid\": \"$g\",\n" +
+    "\t\"date\": new Date($i, 1, 1)\n},\\r\\n";
             this.tbText.TextChanged += new System.EventHandler(this.tbText_TextChanged);
             this.tbText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbText_KeyDown);
             // 
