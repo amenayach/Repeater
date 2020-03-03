@@ -33,6 +33,7 @@ namespace Repeator
                         result += s.Replace("$i", i.ToString())
                                     .Replace("$bool", (i % 2 == 0).ToString().ToLower())
                                     .Replace("$b", (i % 2).ToString())
+                                    .Replace("$g", Guid.NewGuid().ToString())
                                     .Replace("\\r\\n", Environment.NewLine)
                                     .Replace("\\n", Environment.NewLine);
                     }
@@ -119,6 +120,7 @@ namespace Repeator
                                         .Replace("$i", i.ToString())
                                         .Replace("$bool", (i % 2 == 0).ToString().ToLower())
                                         .Replace("$b", (i % 2).ToString())
+                                        .Replace("$g", Guid.NewGuid().ToString())
                                         .Replace("\\r\\n", Environment.NewLine)
                                         .Replace("\\n", Environment.NewLine);
                         }
@@ -143,6 +145,7 @@ namespace Repeator
     ""name"": ""Someone$i"",
     ""enabled"": $bool,
     ""bit"": $b,
+    ""guid"": $b,
     ""date"": new Date($i, 1, 1)
 }},\r\n";
         }
